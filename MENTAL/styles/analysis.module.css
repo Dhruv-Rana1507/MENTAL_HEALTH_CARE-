@@ -1,0 +1,32 @@
+/* analysis.module.css */
+.analysis-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+.section{
+    /* background-color: red; */
+    border: 3px dotted red;
+    padding: 30px;
+    margin: 40px;
+}
+
+
+
+  /* Responsive Styles using CSS4 Media Queries */
+  @screen small {
+    .analysis-container {
+      padding: 10px;
+      
+    }
+  }
+  
+  @screen medium {
+    .analysis-container {
+      font-size: 18px;
+    }
+  }
+  
+  /* Add more responsive styles as needed */
+  
