@@ -1,0 +1,88 @@
+/* =====header css==== */
+.akhuheader {
+    /* background-color: red; */
+    border-bottom: 2px dotted black;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+/* =====logo css==== */
+.logo {
+    flex: 15%;
+    display: flex;
+    font-size: larger;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-right: 0.5px solid rgba(0, 0, 0, 0.142);
+}
+
+/* =======navbar css======= */
+.mainnav ul {
+    display: flex;
+    flex: 70%;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    /* border: 2px solid rgb(255, 255, 0); */
+    margin: 50px;
+}
+
+/* .mainnav {
+    border: 2px solid rgb(66, 66, 12);
+} */
+
+.mainnav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.mainnav ul li {
+    list-style: none;
+    margin: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.strong {
+    align-items: center;
+    justify-content: center;
+}
+
+/* =====search css==== */
+.search {
+    flex: 15%;
+    display: flex;
+    font-size: larger;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-left : 0.5px solid rgba(0, 0, 0, 0.142);
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 768px) {
+    .akhuheader {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo,
+    .mainnav ul,
+    .search {
+        flex: 100%;
+    }
+
+    .mainnav ul {
+        margin: 20px;
+    }
+
+    .mainnav ul li {
+        margin: 10px;
+    }
+
+    .search {
+        padding: 20px 10px;
+    }
+}
