@@ -1,97 +1,67 @@
-// pages/login.js
+// pages/signup.js
 import React, { useState } from 'react';
-import axios from 'axios';
-import styles from '../styles/Login.module.css';
+import styles from '../styles/sign.module.css';
 
-const Login = () => {
+const Signup = () => {
   const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
-  const [phoneNo, setPhoneNo] = useState('');
-  const [dob, setDOB] = useState('');
-  const [address, setAddress] = useState('');
-  const [gender, setGender] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleLogin = async () => {
-    try {
-      const response = await axios.post('http://localhost:8001/login', {
-        username: username,
-        password: password,
-        email: email,
-        phone_no: phoneNo,
-        DOB: dob,
-        address: address,
-        gender: gender,
-      });
+  const handleSignup = async () => {
+    // Simulated backend API call for user registration
+    const response = await fetch('https://jsonplaceholder.typicode.com/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username,
+        email,
+        password,
+      }),
+    });
 
-      if (response.data.success) {
-        console.log('Login successful');
-      } else {
-        console.log('Login failed');
-        alert('Login failed');
-      }
-    } catch (error) {
-      console.error('Error during login:', error.message);
-      alert('An error occurred during login');
+    const data = await response.json();
+
+    // Check the response from the backend
+    if (response.ok) {
+      // Successful signup, you can redirect to another page or perform additional actions
+      console.log('Signup successful', data);
+    } else {
+      // Failed signup
+      console.log('Signup failed', data);
     }
   };
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.heading}>Sign In</h1>
-      <form className={styles.frm}>
-        <table>
-          <tbody>
-            <tr>
-              <td>Username:</td>
-              <td>
-                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-              </td>
-            </tr>
-            <tr>
-              <td>Password:</td>
-              <td>
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-              </td>
-            </tr>
-            <tr>
-              <td>Email:</td>
-              <td>
-                <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
-              </td>
-            </tr>
-            <tr>
-              <td>Phone Number:</td>
-              <td>
-                <input type="text" value={phoneNo} onChange={(e) => setPhoneNo(e.target.value)} />
-              </td>
-            </tr>
-            <tr>
-              <td>Date of Birth:</td>
-              <td>
-                <input type="date" value={dob} onChange={(e) => setDOB(e.target.value)} />
-              </td>
-            </tr>
-            <tr>
-              <td>Address:</td>
-              <td>
-                <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
-              </td>
-            </tr>
-            <tr>
-              <td>Gender:</td>
-              <td>
-                <input type="text" value={gender} onChange={(e) => setGender(e.target.value)} />
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <button type="button" onClick={handleLogin}>
-          Login
+      <h1 className={styles.hd}>Sign Up</h1>
+      <form className={styles['signup-form']}>
+       
+        <label className={styles['signup-label']}>
+          Email:
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={styles['signup-input']}
+          />
+        </label>
+        <label className={styles['signup-label']}>
+          Password:
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className={styles['signup-input']}
+          />
+        </label>
+        <button type="button" onClick={handleSignup} className={styles['signup-button']}>
+          Sign Up
         </button>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Signup;
