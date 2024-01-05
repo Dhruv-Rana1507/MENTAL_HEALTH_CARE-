@@ -1,19 +1,21 @@
 /* styles/Login.module.css */
 .container {
-  max-width: 100%;
+  max-width: 30rem;
   margin: 20px auto;
   padding: 30px;
-  height: 100vh;
-  background: linear-gradient(to right, #ff4e50, #f9d423);
-  border-radius: 14px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  height: 94vh;
+  /* background: linear-gradient(to right, #ff4e50, #f9d423); */
+  border-radius: 17px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.975);
   transition: box-shadow 0.3s ease-in-out;
 }
 
 .heading {
   text-align: center;
   color: #000000;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  border-bottom: 2px dotted black;
+
 }
 
 .frm {
@@ -50,7 +52,7 @@
 }
 
 .frm button {
-  background-color: #4caf50;
+  background-color: #0044ff;
   color: #fff;
   padding: 0.7rem 1rem;
   border: none;
@@ -60,7 +62,7 @@
 }
 
 .frm button:hover {
-  background-color: #45a049;
+  background-color: #00ff0d;
 }
 
 /* Responsive adjustments */

@@ -12,8 +12,8 @@ const Nav = () => {
       <Link href='/'><li>Home</li></Link>
       <Link href='/blog'><li>Blog</li></Link>
       <Link href='/analysis'><li>Analysis</li></Link>
-      <Link href='/signin'><li>Log In</li></Link>
-      <Link href='/login'><li>Sign In</li></Link>
+      <Link href='/login'><li>Log In</li></Link>
+      <Link href='/sign'><li>Sign In</li></Link>
       <Link href='/about'><li>About</li></Link>
       <Link href='/contact'><li>Contact</li></Link>
       

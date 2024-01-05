@@ -32,13 +32,15 @@
   transform: scale(1.05); /* Scale up the article on hover for an interactive effect */
 }
 
-.blog-footer {
+.footer {
  
   text-align: center;
   margin-top: 20px;
   padding: 10px;
-  background-color: #f4f4f4;
-  color: #777; /* Set a slightly muted text color */
+  font-size: large;
+  font-weight: bold;
+  background: linear-gradient(90deg, #529593, #1496ed);
+  color: #000000; /* Set a slightly muted text color */
 }
 
 /* Responsive Design */

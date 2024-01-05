@@ -95,9 +95,7 @@ const Blog = () => {
         </article>
         {/* Add more articles as needed */}
       </section>
-      <footer className={styles['blog-footer']}>
-        <p>&copy; 2023 Mental Health Blog. All rights reserved.</p>
-      </footer>
+      
     </div>
   );
 };
