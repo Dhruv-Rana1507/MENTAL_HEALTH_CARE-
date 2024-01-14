@@ -1,7 +1,7 @@
 /* sign.module.css */
 
 .container {
-  max-width: 400px;
+  max-width: 500px;
   height: 70vh;
   margin: 0 auto;
   padding: 20px;
@@ -11,35 +11,34 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.hd {
+.mkc {
   padding: 10px;
   margin: 10px;
-  /* border: 2px solid red;   */
   text-align: center;
   color: #333;
 }
 
-.signup-form {
+.form {
   display: flex;
-  padding: 40px;
-  margin: 20px;
-  /* border: 2px solid red;   */
   flex-direction: column;
+  padding: 20px;
+  margin: 20px;
+  width: 80%;
 }
 
-.signup-label {
+.form-label {
   margin-bottom: 8px;
   color: #333;
 }
 
-.signup-input {
+.form-control {
   padding: 8px;
   margin-bottom: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.signup-button {
+.btn-primary {
   background-color: #4caf50;
   color: #fff;
   padding: 10px;
@@ -49,7 +48,7 @@
   font-size: 16px;
 }
 
-.signup-button:hover {
+.btn-primary:hover {
   background-color: #45a049;
 }
 
@@ -57,7 +56,6 @@
 @media (max-width: 600px) {
   .container {
     width: 100%;
-    padding: 10px;
   }
 }
 
@@ -68,4 +66,3 @@
 }
 
 /* Add more responsive styles as needed */
-  

@@ -9,10 +9,16 @@ app.use(cors()); // Enable CORS for all routes
 app.use(bodyParser.json());
 
 // MySQL database connection configuration
-const db = mysql.createConnection("mysql://root:Urvirana@1507@localhost:3306/mental")
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'Urvirana@1507',
+  database: 'mental',
+  port: 3306,
+});
 
 // Connect to the database
-db.connect((err) => {
+connection.connect((err) => {
   if (err) {
     console.error('Error connecting to MySQL database:', err);
   } else {
@@ -21,23 +27,49 @@ db.connect((err) => {
 });
 
 // Define a simple route
-app.post('/login', (req, res) => {
-    const { username, password, email, phone_no, DOB, address, gender } = req.body;
-  
-    // Insert user data into the sign_in table
-    const sql = `INSERT INTO sign_in (username, password, email, phone_no, DOB, address, gender) 
-                 VALUES (?, ?, ?, ?, ?, ?, ?)`;
-  
-    db.query(sql, [username, password, email, phone_no, DOB, address, gender], (err, result) => {
-      if (err) {
-        console.error('Error inserting user data:', err);
-        res.json({ success: false });
-      } else {
-        console.log('User data inserted successfully');
-        res.json({ success: true });
-      }
-    });
+app.post('/create', (req, res) => {
+  const { name, email, password, address, state, city, pincode, phone } = req.body;
+
+  const query =
+    'INSERT INTO sign_in (name, email, password, address, state, city, pincode, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+  const values = [name, email, password, address, state, city, pincode, phone];
+
+  connection.query(query, values, (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ message: 'Error creating employee' });
+    }
+
+    return res.status(201).json({ message: 'Employee created successfully' });
   });
+});
+
+
+
+// login
+app.post('/api/login', (req, res) => {
+  const { email, password } = req.body;
+  console.log('Received login request:', email, password);
+  // Assuming you have a 'users' table
+  const query = 'SELECT * FROM sign_in WHERE email = ? AND password = ?';
+  const values = [email, password];
+
+  connection.query(query, values, (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ success: false, message: 'Error during login' });
+    }
+
+    if (results.length > 0) {
+      // User found, send success response
+      return res.status(200).json({ success: true, message: 'Login successful' });
+    } else {
+      // No matching user found, send failure response
+      return res.status(401).json({ success: false, message: 'Invalid email or password' });
+    }
+  });
+});
+
 
 // Start the server
 app.listen(PORT, () => {

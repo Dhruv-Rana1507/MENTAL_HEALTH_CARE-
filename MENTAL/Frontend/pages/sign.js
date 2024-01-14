@@ -1,97 +1,175 @@
-// pages/login.js
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-import styles from '../styles/Login.module.css';
+import { useRouter } from 'next/router';
+import styles from '../styles/sign.module.css';
 
-const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
-  const [phoneNo, setPhoneNo] = useState('');
-  const [dob, setDOB] = useState('');
-  const [address, setAddress] = useState('');
-  const [gender, setGender] = useState('');
+const Signup = () => {
+  const [data, setData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    address: '',
+    state: '',
+    city: '',
+    pincode: '',
+    phone: '',
+  });
 
-  const handleLogin = async () => {
+  const router = useRouter();
+
+  const handleInputChange = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
     try {
-      const response = await axios.post('http://localhost:8001/login', {
-        username: username,
-        password: password,
-        email: email,
-        phone_no: phoneNo,
-        DOB: dob,
-        address: address,
-        gender: gender,
-      });
-
-      if (response.data.success) {
-        console.log('Login successful');
-      } else {
-        console.log('Login failed');
-        alert('Login failed');
-      }
+      const response = await axios.post('http://localhost:8001/create', data);
+      console.log(response.data.message);
+      router.push('/login');
     } catch (error) {
-      console.error('Error during login:', error.message);
-      alert('An error occurred during login');
+      console.error(error);
     }
   };
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.heading}>Sign In</h1>
-      <form className={styles.frm}>
-        <table>
-          <tbody>
-            <tr>
-              <td>Username:</td>
-              <td>
-                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-              </td>
-            </tr>
-            <tr>
-              <td>Password:</td>
-              <td>
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-              </td>
-            </tr>
-            <tr>
-              <td>Email:</td>
-              <td>
-                <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
-              </td>
-            </tr>
-            <tr>
-              <td>Phone Number:</td>
-              <td>
-                <input type="text" value={phoneNo} onChange={(e) => setPhoneNo(e.target.value)} />
-              </td>
-            </tr>
-            <tr>
-              <td>Date of Birth:</td>
-              <td>
-                <input type="date" value={dob} onChange={(e) => setDOB(e.target.value)} />
-              </td>
-            </tr>
-            <tr>
-              <td>Address:</td>
-              <td>
-                <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
-              </td>
-            </tr>
-            <tr>
-              <td>Gender:</td>
-              <td>
-                <input type="text" value={gender} onChange={(e) => setGender(e.target.value)} />
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <button type="button" onClick={handleLogin}>
-          Login
-        </button>
-      </form>
+      
+
+      {/* Content */}
+      <div className={styles.content}>
+        <h1 className={styles.mkc}>Make Account</h1>
+        <form className={styles.form} onSubmit={handleSubmit}>
+
+          <div className={styles.name}>
+            <label htmlFor='inputName' >
+              Full Name
+            </label>
+            <input
+              type='text'
+              className='form-control'
+              id='inputName'
+              name='name'
+              placeholder='Enter Name'
+              autoComplete='off'
+              onChange={handleInputChange}
+            />
+          </div>
+
+          <div className={styles.email}>
+            <label htmlFor='inputEmail' >
+              E-Mail
+            </label>
+            <input
+              type='email'
+              className='form-control'
+              id='inputEmail'
+              name='email'
+              placeholder='Enter Email'
+              autoComplete='off'
+              onChange={handleInputChange}
+            />
+          </div>
+
+          <div className={styles.psd}>
+            <label htmlFor='inputPassword' >
+              Password
+            </label>
+            <input
+              type='password'
+              className='form-control'
+              id='inputPassword'
+              name='password'
+              placeholder='Enter Password'
+              onChange={handleInputChange}
+            />
+          </div>
+
+          <div className={styles.address}>
+            <label htmlFor='inputAddress' >
+              Address
+            </label>
+            <input
+              type='text'
+              className='form-control'
+              id='inputAddress'
+              name='address'
+              placeholder='1234 Main St'
+              autoComplete='off'
+              onChange={handleInputChange}
+            />
+          </div>
+
+          <div className={styles.state}>
+            <label htmlFor='inputState' >
+              State
+            </label>
+            <input
+              type='text'
+              className='form-control'
+              id='inputState'
+              name='state'
+              placeholder='Enter State Name'
+              autoComplete='off'
+              onChange={handleInputChange}
+            />
+          </div>
+
+          <div className={styles.city}>
+            <label htmlFor='inputCity' >
+              City
+            </label>
+            <input
+              type='text'
+              className='form-control'
+              id='inputCity'
+              name='city'
+              placeholder='Enter City'
+              autoComplete='off'
+              onChange={handleInputChange}
+            />
+          </div>
+
+          <div className={styles.pincode}>
+            <label htmlFor='inputPincode' >
+              Pincode
+            </label>
+            <input
+              type='text'
+              className='form-control'
+              id='inputPincode'
+              name='pincode'
+              placeholder='Enter Pincode'
+              autoComplete='off'
+              onChange={handleInputChange}
+            />
+          </div>
+
+          <div className={styles.phn}>
+            <label htmlFor='inputPhone' >
+              Phone
+            </label>
+            <input
+              type='text'
+              className='form-control'
+              id='inputPhone'
+              name='phone'
+              placeholder='Enter Phone'
+              autoComplete='off'
+              onChange={handleInputChange}
+            />
+          </div>
+
+          <div className={styles.crt}>
+            <button type='submit' className='btn btn-primary'>
+              Create
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
 
-export default Login;
+export default Signup;
