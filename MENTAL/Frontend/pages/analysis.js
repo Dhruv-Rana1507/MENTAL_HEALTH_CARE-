@@ -1,9 +1,12 @@
 // pages/analysis.js
 import React from 'react';
 import styles from '../styles/analysis.module.css';
-
+import Nav from '../component/nav'
 const Analysis = () => {
   return (
+    <>
+    {/* navbar */}
+    <Nav />
     <div className={styles['analysis-container']}>
       <h1>Mental Health Care Analysis</h1>
 
@@ -53,6 +56,7 @@ const Analysis = () => {
 
       {/* Add more sections based on your analysis content */}
     </div>
+    </>
   );
 };
 

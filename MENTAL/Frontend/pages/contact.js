@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Head from 'next/head';
-
+import Nav from '../component/nav'
 const Contact = () => {
   return (
     <div>
@@ -10,7 +10,8 @@ const Contact = () => {
         <title>Contact Us - Your Blog Name</title>
         <meta name="description" content="Get in touch with us. We'd love to hear from you!" />
       </Head>
-
+{/* navbar */}
+<Nav/>
       <div className="container">
         <h1>Contact Us</h1>
         <p>

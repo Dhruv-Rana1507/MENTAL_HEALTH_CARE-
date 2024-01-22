@@ -100,10 +100,10 @@
 
 .center::before,
 .center::after {
-  content: '';
+  /* content: ''; */
   left: 50%;
-  position: absolute;
-  filter: blur(45px);
+  /* position: absolute; */
+  /* filter: blur(45px); */
   transform: translateZ(0);
 }
 
@@ -236,9 +236,22 @@
   margin: 10px;
   align-items: center;
   font-family: cursive;
-}
+}j
 
 
 .myImg{
   border-radius :50px;
 }
+
+
+/* 
+.container {
+  
+  background-image: url('../component/img/9520773.jpg'); 
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+} */

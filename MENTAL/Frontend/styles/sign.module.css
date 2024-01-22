@@ -1,68 +1,138 @@
-/* sign.module.css */
+/* styles/sign.module.css */
+
+/* Common styling for cell containers */
+.label-cell,
+.input-cell {
+  padding: 15px;
+  border-radius: 5px;
+}
 
 .container {
-  max-width: 500px;
-  height: 70vh;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: auto;
+  height: auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  /* background-color: #f0f0f0; */
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  /* background-color: #ffffff; */
+  background-color: transparent;
+  height: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .mkc {
-  padding: 10px;
-  margin: 10px;
   text-align: center;
+  margin-bottom: 20px;
   color: #333;
+  font-size: 24px;
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  margin: 20px;
-  width: 80%;
+  display: grid;
+  gap: 20px;
 }
 
-.form-label {
-  margin-bottom: 8px;
-  color: #333;
+.tb {
+  width: 100%;
+}
+
+/* Styling for labels */
+.name label,
+.email label,
+.psd label,
+.address label,
+.state label,
+.city label,
+.pincode label,
+.phn label {
+  font-size: larger;
+  margin: 8px;
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #000000;
+}
+
+/* 3D effect for input fields */
+.name input,
+.email input,
+.psd input,
+.address input,
+.state input,
+.city input,
+.pincode input,
+.phn input {
+  font-size: medium;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 8px;
+  display: flex;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 3D box shadow */
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  color: #000000df;
+}
+
+/* Hover effect for input fields */
+.name input:hover,
+.email input:hover,
+.psd input:hover,
+.address input:hover,
+.state input:hover,
+.city input:hover,
+.pincode input:hover,
+.phn input:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Enhanced 3D effect on hover */
 }
 
 .form-control {
-  padding: 8px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
 }
 
-.btn-primary {
-  background-color: #4caf50;
+.btnprimary {
+  background-color: #3498db;
   color: #fff;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
+  padding: 15px;
+  font-size: 18px;
   cursor: pointer;
-  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  align-self: center;
+  transition: background-color 0.3s;
 }
 
-.btn-primary:hover {
-  background-color: #45a049;
+.btnprimary:hover {
+  background-color: #2980b9;
 }
 
 /* Responsive Styles */
-@media (max-width: 600px) {
+@media only screen and (max-width: 600px) {
   .container {
-    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .label-cell,
+  .input-cell {
+    padding: 5px;
+  }
+
+  .btnprimary {
+    margin-top: 20px;
   }
 }
-
-@media (min-width: 601px) and (max-width: 1024px) {
-  .container {
-    max-width: 80%;
-  }
-}
-
-/* Add more responsive styles as needed */

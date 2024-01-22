@@ -1,26 +1,6 @@
-// import React from 'react'
-
-// const about = () => {
-//   return (
-//     <div>
-      
-
-//       <div>
-//         This is my about  component
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default about
-
-
-
-// pages/about.js
-
 import React from 'react';
 import Head from 'next/head';
-
+import Nav from '../component/nav'
 const About = () => {
   return (
     <div>
@@ -28,6 +8,7 @@ const About = () => {
         <title>About Us - Your Blog Name</title>
         <meta name="description" content="Learn more about us and our blog." />
       </Head>
+    <Nav/>
 
       <div className="container">
         <h1>About Us</h1>

@@ -12,8 +12,9 @@ const Nav = () => {
       <Link href='/'><li>Home</li></Link>
       <Link href='/blog'><li>Blog</li></Link>
       <Link href='/analysis'><li>Analysis</li></Link>
-      <Link href='/login'><li>Log In</li></Link>
-      <Link href='/sign'><li>Sign In</li></Link>
+      <Link href='/login'><li>Log Out</li></Link>
+      <Link href='/check'><li>Check YourSelf</li></Link>
+
       <Link href='/about'><li>About</li></Link>
       <Link href='/contact'><li>Contact</li></Link>
       

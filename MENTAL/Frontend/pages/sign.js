@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import styles from '../styles/sign.module.css';
-
+import Nav from '../component/nav'
 const Signup = () => {
   const [data, setData] = useState({
     name: '',
@@ -13,6 +13,7 @@ const Signup = () => {
     city: '',
     pincode: '',
     phone: '',
+    age:'',
   });
 
   const router = useRouter();
@@ -34,141 +35,166 @@ const Signup = () => {
   };
 
   return (
+    <>
+    {/* navbar */}
+    <Nav/>
     <div className={styles.container}>
-      
-
       {/* Content */}
       <div className={styles.content}>
         <h1 className={styles.mkc}>Make Account</h1>
         <form className={styles.form} onSubmit={handleSubmit}>
+          <table className= {styles.tb}>
+            <tbody>
+              <tr>
+                <td className={styles.name}>
+                  <label htmlFor='inputName'>Full Name</label>
+                </td>
+                <td className={styles.name}>
+                  <input
+                    type='text'
+                    className='form-control'
+                    id='inputName'
+                    name='name'
+                    placeholder='Enter Name'
+                    autoComplete='off'
+                    onChange={handleInputChange}
+                  />
+                </td>
+                <td className={styles.email}>
+                  <label htmlFor='inputEmail'>E-Mail</label>
+                </td>
+                <td className={styles.email}>
+                  <input
+                    type='email'
+                    className='form-control'
+                    id='inputEmail'
+                    name='email'
+                    placeholder='Enter Email'
+                    autoComplete='off'
+                    onChange={handleInputChange}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className={styles.psd}>
+                  <label htmlFor='inputPassword'>Password</label>
+                </td>
+                <td className={styles.psd}>
+                  <input
+                    type='password'
+                    className='form-control'
+                    id='inputPassword'
+                    name='password'
+                    placeholder='Enter Password'
+                    onChange={handleInputChange}
+                  />
+                </td>
+                <td className={styles.address}>
+                  <label htmlFor='inputAddress'>Address</label>
+                </td>
+                <td className={styles.address}>
+                  <input
+                    type='text'
+                    className='form-control'
+                    id='inputAddress'
+                    name='address'
+                    placeholder='1234 Main St'
+                    autoComplete='off'
+                    onChange={handleInputChange}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className={styles.state}>
+                  <label htmlFor='inputState'>State</label>
+                </td>
+                <td className={styles.state}>
+                  <input
+                    type='text'
+                    className='form-control'
+                    id='inputState'
+                    name='state'
+                    placeholder='Enter State Name'
+                    autoComplete='off'
+                    onChange={handleInputChange}
+                  />
+                </td>
+                <td className={styles.city}>
+                  <label htmlFor='inputCity'>City</label>
+                </td>
+                <td className={styles.city}>
+                  <input
+                    type='text'
+                    className='form-control'
+                    id='inputCity'
+                    name='city'
+                    placeholder='Enter City'
+                    autoComplete='off'
+                    onChange={handleInputChange}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className={styles.pincode}>
+                  <label htmlFor='inputPincode'>Pincode</label>
+                </td>
+                <td className={styles.pincode}>
+                  <input
+                    type='text'
+                    className='form-control'
+                    id='inputPincode'
+                    name='pincode'
+                    placeholder='Enter Pincode'
+                    autoComplete='off'
+                    onChange={handleInputChange}
+                  />
+                </td>
+                <td className={styles.phn}>
+                  <label htmlFor='inputPhone'>Phone</label>
+                </td>
+                <td className={styles.phn}>
+                  <input
+                    type='text'
+                    className='form-control'
+                    id='inputPhone'
+                    name='phone'
+                    placeholder='Enter Phone'
+                    autoComplete='off'
+                    onChange={handleInputChange}
+                  />
+                </td>
 
-          <div className={styles.name}>
-            <label htmlFor='inputName' >
-              Full Name
-            </label>
-            <input
-              type='text'
-              className='form-control'
-              id='inputName'
-              name='name'
-              placeholder='Enter Name'
-              autoComplete='off'
-              onChange={handleInputChange}
-            />
-          </div>
+               
+              </tr>
+              <tr>
+              <td className={styles.phn}>
+                  <label htmlFor='inputPhone'>Age</label>
+                </td>
+                <td className={styles.phn}>
+                  <input
+                    type='number'
+                    className='form-control'
+                    id='inputPhone'
+                    name='phone'
+                    placeholder='Enter Age'
+                    autoComplete='off'
+                    onChange={handleInputChange}
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-          <div className={styles.email}>
-            <label htmlFor='inputEmail' >
-              E-Mail
-            </label>
-            <input
-              type='email'
-              className='form-control'
-              id='inputEmail'
-              name='email'
-              placeholder='Enter Email'
-              autoComplete='off'
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className={styles.psd}>
-            <label htmlFor='inputPassword' >
-              Password
-            </label>
-            <input
-              type='password'
-              className='form-control'
-              id='inputPassword'
-              name='password'
-              placeholder='Enter Password'
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className={styles.address}>
-            <label htmlFor='inputAddress' >
-              Address
-            </label>
-            <input
-              type='text'
-              className='form-control'
-              id='inputAddress'
-              name='address'
-              placeholder='1234 Main St'
-              autoComplete='off'
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className={styles.state}>
-            <label htmlFor='inputState' >
-              State
-            </label>
-            <input
-              type='text'
-              className='form-control'
-              id='inputState'
-              name='state'
-              placeholder='Enter State Name'
-              autoComplete='off'
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className={styles.city}>
-            <label htmlFor='inputCity' >
-              City
-            </label>
-            <input
-              type='text'
-              className='form-control'
-              id='inputCity'
-              name='city'
-              placeholder='Enter City'
-              autoComplete='off'
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className={styles.pincode}>
-            <label htmlFor='inputPincode' >
-              Pincode
-            </label>
-            <input
-              type='text'
-              className='form-control'
-              id='inputPincode'
-              name='pincode'
-              placeholder='Enter Pincode'
-              autoComplete='off'
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className={styles.phn}>
-            <label htmlFor='inputPhone' >
-              Phone
-            </label>
-            <input
-              type='text'
-              className='form-control'
-              id='inputPhone'
-              name='phone'
-              placeholder='Enter Phone'
-              autoComplete='off'
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className={styles.crt}>
-            <button type='submit' className='btn btn-primary'>
+          <div >
+            <button type='submit' className={styles.btnprimary}>
               Create
             </button>
           </div>
         </form>
       </div>
     </div>
+
+   </>
   );
 };
 

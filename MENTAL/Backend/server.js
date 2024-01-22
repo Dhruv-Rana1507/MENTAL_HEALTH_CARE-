@@ -31,7 +31,7 @@ app.post('/create', (req, res) => {
   const { name, email, password, address, state, city, pincode, phone } = req.body;
 
   const query =
-    'INSERT INTO sign_in (name, email, password, address, state, city, pincode, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+    'INSERT INTO sign_in (name, email, password, address, state, city, pincode, phone,age) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)';
   const values = [name, email, password, address, state, city, pincode, phone];
 
   connection.query(query, values, (err, results) => {
@@ -69,6 +69,34 @@ app.post('/api/login', (req, res) => {
     }
   });
 });
+
+
+// myaccount endpoint
+app.get('/api/myaccount/:email', (req, res) => {
+  const userEmail = req.params.email;
+  const query = 'SELECT * FROM sign_in WHERE email = ?';
+  const values = [userEmail];
+
+  connection.query(query, values, (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ success: false, message: 'Error fetching user data' });
+    }
+
+    if (results.length > 0) {
+      const user = results[0];
+      return res.status(200).json({ success: true, data: user });
+    } else {
+      return res.status(404).json({ success: false, message: 'User not found' });
+    }
+  });
+});
+
+
+
+
+
+
 
 
 // Start the server

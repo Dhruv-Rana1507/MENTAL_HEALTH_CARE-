@@ -1,78 +1,73 @@
-/* styles/Login.module.css */
+/* styles/sign.module.css */
+
 .container {
-  max-width: 30rem;
-  margin: 20px auto;
-  padding: 30px;
-  height: 94vh;
-  /* background: linear-gradient(to right, #ff4e50, #f9d423); */
-  border-radius: 17px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.975);
-  transition: box-shadow 0.3s ease-in-out;
+  max-width: 400px; /* Adjust the max-width as needed */
+  margin: auto;
+  padding: 20px;
 }
 
-.heading {
+.hd {
   text-align: center;
-  color: #000000;
-  margin-bottom: 40px;
-  border-bottom: 2px dotted black;
-
 }
 
-.frm {
+.signup-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1rem;
 }
 
-.frm label {
-  color: #000000;
-  justify-content: center;
-  align-items: center;
-  font-family:Georgia, 'Times New Roman', Times, serif;
+.signup-label {
+  margin: 10px 0;
+  font-size: 16px;
 }
 
-.frm input {
-  padding: 20px;
-  margin: 10px;
+.signup-input {
   width: 100%;
-  border: 1px solid #c0adad;
+  padding: 8px;
+  margin-top: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 1.9px 0px 1.9px 0px;
+}
+
+
+.captcha-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px; /* Adjust margin as needed */
+  color: #000000;
+  font-size: larger;
+  box-shadow: 1px 0px 1.9px 1px;
+  /* border: 2px solid black; */
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 0.5px; /* Add padding for a cleaner look */
   /* border-radius: 4px; */
-  outline: none;
-  transition: border-color 0.2s ease-in-out; /* Add transition property */
-  border-radius: 13px;
-  max-width: 100%;
 }
 
-/* Hover and focus styles */
-.frm input:hover,.frm input:focus {
-  border-color: #000000;
-  border-radius: 16px;
-  border-width: 3px; /* Corrected border property */
-}
-
-.frm button {
-  background-color: #0044ff;
+.signup-button {
+  background-color: #4caf50;
   color: #fff;
-  padding: 0.7rem 1rem;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  margin-top: 10px;
 }
 
-.frm button:hover {
-  background-color: #00ff0d;
+.signup-button:hover {
+  background-color: #45a049;
+  
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
   .container {
-    max-width: 100%;
-    box-shadow: none;
-  }
-
-  .frm {
-    gap: 5rem;
+    max-width: 100%; /* Adjust to fit smaller screens */
+    padding: 10px;
   }
 }
+
+/* Add more media queries as needed for different screen sizes */
