@@ -14,7 +14,6 @@ const Nav = () => {
       <Link href='/analysis'><li>Analysis</li></Link>
       <Link href='/login'><li>Log Out</li></Link>
       <Link href='/check'><li>Check YourSelf</li></Link>
-
       <Link href='/about'><li>About</li></Link>
       <Link href='/contact'><li>Contact</li></Link>
       

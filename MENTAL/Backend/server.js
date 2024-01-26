@@ -93,6 +93,24 @@ app.get('/api/myaccount/:email', (req, res) => {
 });
 
 
+// check the dieses
+app.post('/chk', (req, res) => {
+  const { name, age, gender, symptoms, description } = req.body;
+
+  const query =
+    'INSERT INTO chek (username, age, gender, symptoms, description) VALUES (?, ?, ?, ?, ?)';
+  const values = [name, age, gender, JSON.stringify(symptoms), description];
+
+  connection.query(query, values, (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ message: 'Error storing check yourself data' });
+    }
+
+    return res.status(201).json({ message: 'Data stored successfully' });
+  });
+});
+
 
 
 
