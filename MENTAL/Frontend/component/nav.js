@@ -19,9 +19,9 @@ const Nav = () => {
       
     </ul>
   </nav>
-  <div className={styles.search}>
+  {/* <div className={styles.search}>
         <strong>INNER Ease</strong>
-</div> 
+</div>  */}
   </div>
   )
 }

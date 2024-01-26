@@ -1,8 +1,10 @@
 import React from 'react';
 import styles from '../styles/Blog.module.css'; // Import your CSS module
-
+import Nav from '../component/nav'
 const Blog = () => {
   return (
+    <>
+    <Nav/>
     <div className={styles['blog-container']}>
       <header className={styles['blog-header']}>
         <h1>Mental Health Matters</h1>
@@ -97,6 +99,7 @@ const Blog = () => {
       </section>
       
     </div>
+    </>
   );
 };
 

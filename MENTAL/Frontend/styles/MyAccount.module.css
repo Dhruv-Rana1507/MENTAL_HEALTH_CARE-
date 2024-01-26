@@ -1,0 +1,38 @@
+.heading {
+    text-align: center;
+    margin-top: 20px;
+    color: #060606;
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    margin: 0;
+  }
+  
+  .heading h1 {
+    font-size: 3em;
+  }
+  
+  .content {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for better readability */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px); /* Adjust the blur amount as needed */
+  }
+  
+  .content .rows {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    font-size: 1.2em;
+    color: #000000;
+    background-color: transparent;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .content .rows:hover {
+    /* color: #30729e; */
+    transform: scale(1.03);
+  }
+  
+  
