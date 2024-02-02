@@ -4,9 +4,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   padding: 40px;
-  /* border: 2px solid #e80b0b; */
+  border: 2px solid #e80b0b;
   border-radius: 10px;
   backdrop-filter: blur(4px); /* Adjust the blur intensity as needed */
   background-color: transparent ;
@@ -20,66 +20,75 @@
   color: #000000; /* Set font color */
 }
 .check-yourself-container lable{
- border:2px solid red;
   font-weight: bold;
 }
-.form-container {
+
+.form-table {
   width: 80%;
   max-width: 400px;
+  /* border:2px solid red; */
   margin: 20px;
-  padding: 15px;
-  /* background-color: #e80b0b; */
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  color: #fff; /* Set font color */
+  border-spacing: 10px;
+  color: #000; /* Set font color */
+  padding:10px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.758);
 }
 
-.form-container input,
-.form-container textarea {
+.form-table label {
+  font-weight: bold;
+}
+
+.form-table input,
+.form-table textarea {
   width: 100%;
-  padding: 10px; /* Adjust padding */
-  margin-top: 8px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
+  padding: 10px;
+  border: 2px solid #e80b0b;
   border-radius: 4px;
   box-sizing: border-box;
-  color: #000; /* Set font color */
+    color: #000000c8;
+  background-color: #00fff727;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.758);  
 }
+
+
+.chec{
+  display: flex;
+  flex-wrap: wrap;
+}
+/* check.module.css */
+/* check.module.css */
 
 .checkbox-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
-  /* border: 2px solid red; */
   padding: 19px;
   margin: 20px;
-  border-radius:50px;
-  /* background-color: #dfdfdf93; */
-  /* backdrop-filter: blur(10px);  */
-  box-shadow: 0 6px 10px rgb(0, 0, 0); /* Adjust the box shadow as needed */
+  border-radius: 40px;
+  border: 15px rgba(0, 0, 0, 0.463) solid;
+  /* backdrop-filter: blur(10px); */
+  background-color: rgba(0, 221, 255, 0.477);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.758);
 }
-  
 
 label.checkbox {
   display: flex;
   align-items: center;
-  margin-right: 20px; 
-  margin-bottom: 15px;
+  font-weight: bolder;
+  padding: 12px;
+  border-radius: 6px;
   cursor: pointer;
-  color: #000; 
-  
+  color: #000;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px; /* Add margin for spacing between checkboxes */
 }
 
 .checkbox input {
   margin-right: 8px;
-}
-
-/* Style checkboxes */
-.checkbox input[type="checkbox"] {
   appearance: none;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border: 2px solid #000;
   border-radius: 4px;
   outline: none;
@@ -94,6 +103,12 @@ label.checkbox {
 .checkbox input[type="checkbox"]:focus {
   border: 2px solid #45a049;
 }
+
+.checkbox-container:hover label.checkbox {
+  background-color: rgba(0, 0, 0, 0.1);
+  ;
+}
+
 
 .submit-button {
   background-color: #4caf50;
@@ -114,9 +129,10 @@ label.checkbox {
   text-align: center;
   display: flex;
   flex-wrap: wrap;
-  border: 2px solid red ;
-  backdrop-filter: blur(10px); /* Adjust the blur intensity as needed */
-  background-color: transparent ;
+  padding: 10px;
+  /* border: 2px solid red ; */
+  backdrop-filter: blur(5px); /* Adjust the blur intensity as needed */
+  background-color: rgba(42, 147, 49, 0.205) ;
 }
 
 @media screen and (max-width: 600px) {
@@ -130,3 +146,11 @@ label.checkbox {
     width: 100%;
   }
 }
+
+
+
+/* check.module.css */
+/* ... (unchanged code) */
+
+
+/* ... (unchanged code) */

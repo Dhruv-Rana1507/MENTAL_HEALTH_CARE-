@@ -28,11 +28,10 @@ connection.connect((err) => {
 
 // Define a simple route
 app.post('/create', (req, res) => {
-  const { name, email, password, address, state, city, pincode, phone } = req.body;
+  const {name, email, password, address, state, city, pincode, phone ,age} = req.body;
 
-  const query =
-    'INSERT INTO sign_in (name, email, password, address, state, city, pincode, phone,age) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)';
-  const values = [name, email, password, address, state, city, pincode, phone];
+  const query ='INSERT INTO sign_in (name, email, password, address, state, city, pincode, phone,age) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)';
+  const values = [name, email, password, address, state, city, pincode, phone,age];
 
   connection.query(query, values, (err, results) => {
     if (err) {
@@ -61,7 +60,7 @@ app.post('/api/login', (req, res) => {
     }
 
     if (results.length > 0) {
-      // User found, send success response
+      
       return res.status(200).json({ success: true, message: 'Login successful' });
     } else {
       // No matching user found, send failure response
