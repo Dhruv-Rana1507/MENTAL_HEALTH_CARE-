@@ -25,6 +25,17 @@ const Signup = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+
+    // Validate that 'age' is a valid integer before submitting
+    const ageValue = parseInt(data.age);
+    if (isNaN(ageValue) || ageValue < 0) {
+      console.error('Invalid age value');
+      // Handle the error or provide feedback to the user
+      return;
+    }
+
+
+
     try {
       const response = await axios.post('http://localhost:8001/create', data);
       console.log(response.data.message);
@@ -167,21 +178,21 @@ const Signup = () => {
                
               </tr>
               <tr>
-              <td className={styles.phn}>
-                  <label htmlFor='inputPhone'>Age</label>
-                </td>
-                <td className={styles.phn}>
-                  <input
-                    type='number'
-                    className='form-control'
-                    id='inputPhone'
-                    name='phone'
-                    placeholder='Enter Age'
-                    autoComplete='off'
-                    onChange={handleInputChange}
-                  />
-                </td>
-              </tr>
+                  <td className={styles.phn}>
+                    <label htmlFor='inputPhone'>Age</label>
+                  </td>
+                  <td className={styles.phn}>
+                    <input
+                      type='number'
+                      className='form-control'
+                      id='inputPhone'
+                      name='age'
+                      placeholder='Enter Age'
+                      autoComplete='off'
+                      onChange={handleInputChange}
+                    />
+                  </td>
+                </tr>
             </tbody>
           </table>
 

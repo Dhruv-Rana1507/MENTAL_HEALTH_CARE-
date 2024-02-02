@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import styles from '../styles/check.module.css';  
 import Usernav from'../component/usernav';
+// import { Link} from 'react-router-dom';
 const CheckYourselfPage = () => {
   const [username, setUsername] = useState('');
   const [age, setAge] = useState('');
@@ -63,7 +64,7 @@ const CheckYourselfPage = () => {
         .join(', ')}`;
       setResult(resultString);
     } else {
-      setResult('No matching diseases found.');
+      setResult('No Diseases found.');
     }
 
     try {
@@ -86,35 +87,37 @@ const CheckYourselfPage = () => {
       setResult('Error submitting data. Please try again.');
     }
   };
-
+  
   return (
     <>
     {/* navbar */}
     <Usernav/>
     <div className={styles['check-yourself-container']}>
       <h1>Check Yourself</h1>
-      <label>
-        Username:
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-      </label>
+      <table className={styles['form-table']}>
+          <tbody>
+            <tr>
+              <td><label>Username:</label></td>
+              <td><input type="text" value={username} onChange={(e) => setUsername(e.target.value)} /></td>
+            </tr>
+            <tr>
+              <td><label>Age:</label></td>
+              <td><input type="number" value={age} onChange={(e) => setAge(e.target.value)} /></td>
+            </tr>
+            <tr>
+              <td><label>Gender:</label></td>
+              <td><input type="text" value={gender} onChange={(e) => setGender(e.target.value)} /></td>
+            </tr>
+            <tr>
+              <td><label>Description:</label></td>
+              <td><textarea value={description} onChange={(e) => setDescription(e.target.value)} /></td>
+            </tr>
+          </tbody>
+        </table>
       <br />
+          <h2 className={styles['chec']}>Choose The symptoms</h2>
       <label>
-        Age:
-        <input type="number" value={age} onChange={(e) => setAge(e.target.value)} />
-      </label>
-      <br />
-      <label>
-        Gender:
-        <input type="text" value={gender} onChange={(e) => setGender(e.target.value)} />
-      </label>
-      <br />
-      <label>
-        Description:
-        <textarea value={description} onChange={(e) => setDescription(e.target.value)} />
-      </label>
-      <br />
-      <label>
-        Select Symptoms:
+        
         <div className={styles['checkbox-container']}>
           {diseases.flatMap((disease, index) =>
             disease.symptoms.map((symptom, symptomIndex) => (
@@ -127,13 +130,18 @@ const CheckYourselfPage = () => {
                 {symptom}
               </label>
             ))
-          )}
+            )}
         </div>
       </label>
       <br />
       <button className={styles['submit-button']} onClick={handleSubmit}>
         Submit
       </button>
+            
+      <a  href="/chatbot" className={styles['chatbot-link']}>
+          Go to Chatbot
+        </a>
+       
       <br />
       <div className={styles['result-container']}>
         <h3>Disease :  {result}</h3>
