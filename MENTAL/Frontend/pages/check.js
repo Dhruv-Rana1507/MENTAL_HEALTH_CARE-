@@ -138,9 +138,9 @@ const CheckYourselfPage = () => {
         Submit
       </button>
             
-      <a  href="/chatbot" className={styles['chatbot-link']}>
+      {/* <a  href="/chatbot" className={styles['chatbot-link']}>
           Go to Chatbot
-        </a>
+        </a> */}
        
       <br />
       <div className={styles['result-container']}>
