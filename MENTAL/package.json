@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "openai": "^4.26.0"
+    "openai": "^4.26.0",
+    "powerbi-client": "^2.22.3"
   }
 }
