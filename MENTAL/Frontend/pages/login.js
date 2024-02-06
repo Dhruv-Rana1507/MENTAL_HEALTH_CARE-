@@ -34,15 +34,20 @@ const Login = () => {
         return;
       }
 
+      // Check if the user is an admin
+      if (email === 'admin@gmail.com' && password === 'admin@123') {
+        // Redirect to the admin page
+        router.push('/admin');
+        return;
+      }
+
+      // For non-admin users, perform regular authentication (you can query the database here)
       const response = await axios.post('http://localhost:8001/api/login', {
         email,
         password,
       });
 
       if (response.data.success) {
-        // Successful login for non-admin users
-        console.log('Login successful', response.data);
-
         // Redirect to the user's account page for non-admin users
         router.push({
           pathname: '/myaccount',
@@ -50,7 +55,7 @@ const Login = () => {
         });
       } else {
         // Failed login for non-admin users
-        console.log('Login failed', response.data);
+        console.log('Non-admin login failed', response.data);
       }
     } catch (error) {
       // Handle any errors that occur during the API request

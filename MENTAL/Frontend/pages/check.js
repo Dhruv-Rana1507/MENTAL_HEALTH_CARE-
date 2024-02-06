@@ -76,7 +76,7 @@ const CheckYourselfPage = () => {
         description,
       });
 
-     // Optionally, you can reset the form fields here
+    
      setUsername('');
      setAge('');
      setGender('');
@@ -138,9 +138,7 @@ const CheckYourselfPage = () => {
         Submit
       </button>
             
-      {/* <a  href="/chatbot" className={styles['chatbot-link']}>
-          Go to Chatbot
-        </a> */}
+  
        
       <br />
       <div className={styles['result-container']}>
