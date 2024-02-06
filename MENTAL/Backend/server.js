@@ -111,8 +111,36 @@ app.post('/chk', (req, res) => {
 });
 
 
+  // Insert doctor data into the database
+  app.post('/api/add_doctor', (req, res) => {
+    const { name, speciality, state, city } = req.body;
 
+    connection.query(
+      'INSERT INTO doctor (dname, speciality, state, city) VALUES (?, ?, ?, ?)',
+      [name, speciality, state, city],
+      (err, results) => {
+        if (err) {
+          console.error('Error inserting doctor data:', err.message);
+          res.json({ success: false, message: 'Error inserting doctor data' });
+        } else {
+          const insertedId = results.insertId; // Get the auto-generated iddoctor
+          res.json({ success: true, message: 'Doctor added successfully', iddoctor: insertedId });
+        }
+      }
+    );
+  });
 
+// Fetch doctor information from the database
+app.get('/api/get_doctors', (req, res) => {
+  connection.query('SELECT * FROM doctor', (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ success: false, message: 'Error fetching doctor information' });
+    }
+
+    return res.status(200).json({ success: true, doctors: results });
+  });
+});
 
 
 
