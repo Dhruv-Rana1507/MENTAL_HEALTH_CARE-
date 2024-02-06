@@ -1,38 +1,71 @@
+/* Assuming these are global styles */
+/* .body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+} */
+
+/* Header styling */
 .heading {
-    text-align: center;
-    margin-top: 20px;
-    color: #060606;
-    font-family: 'Georgia', 'Times New Roman', Times, serif;
-    margin: 0;
-  }
-  
-  .heading h1 {
-    font-size: 3em;
-  }
-  
+  text-align: center;
+  margin-top: 20px;
+  color: #060606;
+}
+
+.heading h1 {
+  font-size: 2em;
+}
+
+/* Main content styling */
+.content {
+  max-width: 800px;
+  height: 50vh;
+  margin: 25px auto;
+  background-color: transparent; /* Semi-transparent white background for better readability */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px); /* Adjust the blur amount as needed */
+}
+
+/* Table row styling */
+.table {
+  width: 100%;
+  /* border-collapse: collapse; */
+  margin-top: 20px;
+  /* border: none; */
+}
+
+.rows {
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 1.2em;
+  color: #000000;
+  background-color: transparent;
+  transition: transform 0.3s ease-in-out;
+}
+
+.rows:hover {
+  transform: scale(1.03);
+}
+
+/* Additional styling for better readability */
+.table td,
+.table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 600px) {
   .content {
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for better readability */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px); /* Adjust the blur amount as needed */
-  }
-  
-  .content .rows {
+    max-width: 100%;
     padding: 10px;
-    margin: 10px 0;
+  }
+
+  .table {
     width: 100%;
-    font-size: 1.2em;
-    color: #000000;
-    background-color: transparent;
-    transition: transform 0.3s ease-in-out;
+    margin-top: 10px;
   }
-  
-  .content .rows:hover {
-    /* color: #30729e; */
-    transform: scale(1.03);
-  }
-  
-  
+}
