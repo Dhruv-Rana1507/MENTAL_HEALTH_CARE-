@@ -57,9 +57,9 @@ const Admin = () => {
           Add Doctor
         </button>
         
-        <button onClick={fetchDoctorInformation} className={styles.info}>
+        {/* <button onClick={fetchDoctorInformation} className={styles.info}>
           Fetch Doctor Information
-        </button>
+        </button> */}
 
         {/* Display the fetched doctor information */}
         <div className={styles.doctor_info}>
