@@ -69,6 +69,7 @@ const Signup = () => {
                     placeholder='Enter Name'
                     autoComplete='off'
                     onChange={handleInputChange}
+                    required
                   />
                 </td>
                 <td className={styles.email}>
@@ -83,6 +84,7 @@ const Signup = () => {
                     placeholder='Enter Email'
                     autoComplete='off'
                     onChange={handleInputChange}
+                    required
                   />
                 </td>
               </tr>
@@ -98,6 +100,7 @@ const Signup = () => {
                     name='password'
                     placeholder='Enter Password'
                     onChange={handleInputChange}
+                    required
                   />
                 </td>
                 <td className={styles.address}>
@@ -112,6 +115,7 @@ const Signup = () => {
                     placeholder='1234 Main St'
                     autoComplete='off'
                     onChange={handleInputChange}
+                    required
                   />
                 </td>
               </tr>
@@ -128,6 +132,7 @@ const Signup = () => {
                     placeholder='Enter State Name'
                     autoComplete='off'
                     onChange={handleInputChange}
+                    required
                   />
                 </td>
                 <td className={styles.city}>
@@ -142,6 +147,7 @@ const Signup = () => {
                     placeholder='Enter City'
                     autoComplete='off'
                     onChange={handleInputChange}
+                    required
                   />
                 </td>
               </tr>
@@ -158,6 +164,7 @@ const Signup = () => {
                     placeholder='Enter Pincode'
                     autoComplete='off'
                     onChange={handleInputChange}
+                    required
                   />
                 </td>
                 <td className={styles.phn}>
@@ -172,6 +179,7 @@ const Signup = () => {
                     placeholder='Enter Phone'
                     autoComplete='off'
                     onChange={handleInputChange}
+                    required
                   />
                 </td>
 
@@ -190,6 +198,7 @@ const Signup = () => {
                       placeholder='Enter Age'
                       autoComplete='off'
                       onChange={handleInputChange}
+                      required
                     />
                   </td>
                 </tr>

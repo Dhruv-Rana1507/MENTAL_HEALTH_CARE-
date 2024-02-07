@@ -5,12 +5,12 @@ const Nav = () => {
   return (
     <div className={styles.akhuheader}>
 <div className={styles.logo}>
-<strong><Link href='/'>Inner Ease</Link></strong>  
+<strong><Link href='/' className={styles.lg} >Inner Ease</Link></strong>  
 </div>        
     <nav className={styles.mainnav}>
     <ul>
       <Link href='/'><li>Home</li></Link>
-      <Link href='/blog'><li>Blog</li></Link>
+      {/* <Link href='/blog'><li>Blog</li></Link> */}
       <Link href='/analysis'><li>Analysis</li></Link>
       <Link href='/login'><li>Log In</li></Link>
       <Link href='/sign'><li>Sign In</li></Link>
