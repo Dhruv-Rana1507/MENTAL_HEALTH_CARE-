@@ -134,6 +134,7 @@ label.checkbox {
   padding: 10px;
   /* border: 2px solid red ; */
   backdrop-filter: blur(5px); /* Adjust the blur intensity as needed */
+  border-radius: 20px;  
   background-color: rgba(42, 147, 49, 0.205) ;
 }
 
@@ -149,10 +150,23 @@ label.checkbox {
   }
 }
 
-
-
-/* check.module.css */
-/* ... (unchanged code) */
-
-
-/* ... (unchanged code) */
+.doc{
+  /* margin-top: 20px; */
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  width: 13%;
+  padding: 10px;
+  /* border: 2px solid red ; */
+  backdrop-filter: blur(5px); /* Adjust the blur intensity as needed */
+  background-color: rgba(42, 147, 49, 0.205) ;
+  border-radius: 20px;  
+}
+.dct{
+  list-style: none;
+  font-weight: 700;
+  padding: 10px;
+  /* background-color: rgba(0, 89, 255, 0.23); */
+  /* border-radius: 20px; */
+}

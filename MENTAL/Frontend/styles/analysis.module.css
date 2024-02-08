@@ -1,29 +1,133 @@
-/* analysis.module.css */
 
-.analysis-container {
-    /* max-width: 800px;
-    margin: 0 auto;
-    padding: 20px; */
+/* Common styles for the container */
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  /* border: 2px solid #e74c3c;  */
 }
 
-.section {
-  /* background-color: red; */
-  border: 3px dotted red;
-  padding: 30px;
-  margin: 40px;
+/* Navbar styles */
+.nv {
+  border-radius: 10px;  
+  max-width: 80%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.163); 
+  margin: 0 auto;
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Improved spacing between elements */
 }
 
-/* Responsive Styles using CSS4 Media Queries */
-@media (max-width: 600px) {
-  .analysis-container {
-      padding: 10px;
+.nv h2 {
+  margin: 10px 0; /* Adjusting margin for better spacing */
+  font-size: 1.5em; /* Increase font size for better visibility */
+}
+
+/* Year menu styles */
+.yearmenu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.yearmenu ul {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.yearmenu li {
+  padding: 10px;
+  margin: 5px;
+  list-style: none;
+  cursor: pointer; /* Add pointer cursor for better interaction */
+  font-weight: bold; /* Making the font bold for better visibility */
+  transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+}
+
+.yearmenu li:hover {
+  color: #e74c3c; /* Change color on hover for better feedback */
+}
+
+/* Year container styles */
+.ana1 {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 80%;
+}
+
+/* Styling for each year's container */
+.y2014,
+.y2016,
+.y2017,
+.y2018,
+.y2019 {
+  margin-bottom: 20px;
+  /* border: 2px solid #000000; */
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.358); 
+  padding: 10px;
+  border-radius: 5px; /* Adding border-radius for rounded corners */
+  transition: transform 0.3s ease-in-out; /* Smooth scale transition on hover */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .nv {
+    flex-direction: column; /* Adjusting flex direction for smaller screens */
+    text-align: center; /* Center-aligning text for better readability */
+  }
+
+  .yearmenu ul {
+    flex-direction: column; /* Stack menu items vertically on smaller screens */
+  }
+
+  .ana1 {
+    margin: 10px auto;
+  }
+
+  
+  .y2014,
+  .y2016,
+  .y2017,
+  .y2018,
+  .y2019 {
+    margin-bottom: 10px;
+    /* border: 2px red solid; */
   }
 }
 
-@media (min-width: 601px) and (max-width: 1024px) {
-  .analysis-container {
-      font-size: 18px;
-  }
+.y2014:hover,
+.y2016:hover,
+.y2017:hover,
+.y2018:hover,
+.y2019:hover {
+  transform: scale(1.02); 
 }
 
-/* Add more responsive styles as needed */
+
+.y2014 img,
+.y2016 img,
+.y2017 img,
+.y2018 img,
+.y2019 img {
+  max-width: 100%; 
+  height: auto; 
+}
+.dt{
+  /* border: 2px solid red; */
+  /* font: 2p sans-serif; */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  font-style: oblique;
+  /* font-display:inherit; */
+  margin-bottom: 20px;
+  padding: 20px;
+}

@@ -144,6 +144,25 @@ app.get('/api/get_doctors', (req, res) => {
 
 
 
+// Define a new endpoint to suggest doctors based on diseases
+app.post('/suggest-doctors', (req, res) => {
+  const { diseases } = req.body;
+
+  // Query the database to find doctors who specialize in treating the provided diseases
+  const query = 'SELECT dname FROM doctor WHERE speciality IN (?)';
+  connection.query(query, [diseases], (err, results) => {
+    if (err) {
+      console.error('Error suggesting doctors:', err);
+      return res.status(500).json({ success: false, message: 'Error suggesting doctors' });
+    }
+
+    // Return the list of suggested doctors
+    return res.status(200).json({ success: true, suggestedDoctors: results });
+  });
+});
+
+
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

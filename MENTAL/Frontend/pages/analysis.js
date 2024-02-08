@@ -1,61 +1,65 @@
-// pages/analysis.js
 import React from 'react';
 import styles from '../styles/analysis.module.css';
-import Nav from '../component/nav'
+import Nav from '../component/nav';
+import Image  from 'next/image';
 const Analysis = () => {
   return (
     <>
-    {/* navbar */}
-    <Nav />
-    <div className={styles['analysis-container']}>
-      <h1>Mental Health Care Analysis</h1>
+  
+      <Nav />
+      <div className={styles['container']}>
+        <div className={styles['nv']} id='top'>
+          <h2>Mental Health Care Analysis Done In Year Are  </h2>
+          <div className={styles['yearmenu']}>
+            <ul>
+              <li> <a href="#y2014">2014</a> </li>
+              <li> <a href="#y2016">2016</a> </li>
+              <li> <a href="#y2017">2017</a> </li>
+              <li> <a href="#y2018">2018</a> </li>
+              <li> <a href="#y2019">2019</a> </li>
+            </ul>
+          </div>
+        </div>
+        <div className={styles['ana1']}>
+          <p className={styles['dt']}> In 2014, the number of employees who received mental health benefit awareness training was relatively low, with only about 30% of companies offering such training.</p>
+          
+          <div  className={styles['y2014']}>
+            <Image src='/2014.jpg' height='500' width='800' id='y2014'  /> 
+            {/* <a href="#top" className={styles['tp']}>Top</a> */}
+          </div>
+        </div>
+        <div className={styles['ana1']}>
+          <p className={styles['dt']}>According to a report by the Society for Human Resource Management, the number of employers offering mental health benefits to employees increased significantly in 2016. The report found that approximately 73% of organizations offered some type of mental health benefit that year, up from 57% in 2013. This trend has been driven in part by increased awareness of the importance of mental health and well-being in the workplace, as well as changes in healthcare regulations and technology.</p>
+          
+          <div  className={styles['y2016']}>
+            <Image src='/2016.jpg' height='500' width='800' id='y2016' /> 
+          </div>
+        </div>
+        <div className={styles['ana1']}>
+        <p className={styles['dt']}>In 2017, it was reported that approximately 17% of companies in the United States offered mental health benefits to their employees. This includes companies of all sizes and industries. Additionally, some studies have suggested that access to mental health benefits may be associated with improved employee mental health and job performance. It's important for companies to offer these types of benefits as they help to create a supportive and healthy workplace for their employees.</p>
+          
+          <div  className={styles['y2017']}>
+            <Image src='/2017.jpg' height='500' width='800' id='y2017' /> 
+          </div>
+        </div>
 
-      <section className={styles.section}>
-        <h2>Overview</h2>
-        <p>
-          Certainly! A mental health care analysis typically involves an examination and interpretation of data related to mental health services, outcomes, and trends. This analysis aims to gain insights into various aspects of mental health care, including the effectiveness of interventions, patient outcomes, and the overall state of mental health within a given population or community.
-        </p>
-        <p>
-          Key components of a mental health care analysis might include:
-        </p>
-      </section>
+        <div className={styles['ana1']}>
+        <p className={styles['dt']}>In 2018, a study found that although 64% of employees were struggling with their mental health, only 19% utilized their company's mental health benefits. This suggests a gap between the availability of mental health resources and their actual utilization. The study's findings can be found in the article "Study Finds Although 64% of Employees Are Struggling with Their Mental Health, Only 19% Used Their Company's Mental Health Benefits Last Year."</p>
+          
+          <div  className={styles['y2018']}>
+            <Image src='/2018.jpg' height='500' width='800' id='y2018' /> 
+          </div>
+        </div>
 
-      <section className={styles.section}>
-        <ol>
-          <li>Demographic Analysis: Understanding the demographic characteristics of individuals seeking mental health care, such as age, gender, ethnicity, and socio-economic factors.</li>
-          <li>Treatment Effectiveness:Assessing the effectiveness of different mental health treatments and interventions. This could involve analyzing patient outcomes, recovery rates, and relapse prevention.</li>
-          <li>Access to Services:Examining the accessibility of mental health services, identifying barriers to access, and proposing strategies to improve the availability of care.</li>
-          <li>Prevalence of Mental Health Conditions: Analyzing the prevalence of various mental health conditions within a population, identifying trends, and understanding risk factors.</li>
-          <li>Public Awareness and Stigma:Evaluating public awareness of mental health issues and assessing efforts to reduce stigma associated with seeking mental health care.</li>
-          <li>Resource Allocation: Assessing the allocation of resources for mental health services, including funding, staffing, and infrastructure.</li>
-          <li>Integration with Other Health Services:Examining how mental health care is integrated into broader healthcare systems and identifying opportunities for improved collaboration.</li>
-          <li>Technology and Innovation:Exploring the impact of technology and innovative approaches on mental health care delivery, such as telehealth services and digital mental health tools.</li>
-        </ol>
-      </section>
-
-      <section className={styles.section}>
-        <p>
-          The goal of a mental health care analysis is to inform decision-makers, policymakers, and healthcare professionals with data-driven insights, ultimately contributing to the enhancement of mental health care services and the well-being of individuals affected by mental health conditions.
-        </p>
-      </section>
-
-      <section className={styles.section}>
-        <h2>Statistics</h2>
-        <ul>
-            <li>
-            Global Burden:According to the World Health Organization (WHO), approximately 1 in 4 people worldwide will experience a mental health condition at some point in their lives.
-            </li>
-        </ul>
-        {/* You can use chart libraries like Chart.js or D3.js for visualizations */}
-      </section>
-
-      <section className={styles.section}>
-        <h2>Trends</h2>
-        <p>Discuss any trends or patterns observed in mental health care data.</p>
-      </section>
-
-      {/* Add more sections based on your analysis content */}
-    </div>
+        <div className={styles['ana1']}>
+        <p className={styles['dt']}>According to a study by the Center for Workplace Mental Health, over 65% of U.S. employers provided mental health benefits in 2019. Additionally, over 25% of employees who used their employer-provided mental health benefits reported that they felt their employer supported their mental health and well-being. </p> 
+          
+          <div  className={styles['y2019']}>
+            <Image src='/2019.jpg' height='500' width='900' id='y2019' /> 
+          </div>
+        
+        </div>
+      </div>
     </>
   );
 };

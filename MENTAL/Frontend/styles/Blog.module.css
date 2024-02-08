@@ -1,16 +1,16 @@
 /* Blog.module.css */
 
 .blog-container {
-  
   margin: 0 auto;
   padding: 20px;
-  /* background-color: #c131319f; Set a background color for the container */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
-  
 }
 
 .blog-header {
   text-align: center;
+  /* box-shadow: 0 0 10px autoclear
+  ; */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   margin-bottom: 20px;
   color: #000000; /* Set text color */
 }
@@ -21,11 +21,17 @@
 }
 
 .article {
+  backdrop-filter: blur(5px); /* Apply a blur effect to the background */
   border: 1px solid #ddd;
-  padding: 15px; 
-  border-radius: 8px; /* Add more rounded corners */
-  transition: transform 0.3s ease; /* Add a smooth transition effect */
-  
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: medium;
+  padding: 30px; 
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.article ul li {
+  list-style: none;
 }
 
 .article:hover {
@@ -33,7 +39,6 @@
 }
 
 .footer {
- 
   text-align: center;
   margin-top: 20px;
   padding: 10px;
