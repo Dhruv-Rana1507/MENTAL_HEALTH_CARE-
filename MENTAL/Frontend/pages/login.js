@@ -77,6 +77,7 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className={styles['signup-input']}
+              required
             />
           </label>
           <label className={styles['signup-label']}>
@@ -86,6 +87,7 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className={styles['signup-input']}
+              required
             />
           </label>
           <label className={styles['signup-label']}>
