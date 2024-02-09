@@ -1,0 +1,68 @@
+/* Styles for the AddDoctor component */
+
+.adddoctorpage {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .adddoctorpage h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .frm {
+    display: grid;
+    grid-gap: 10px;
+  }
+  
+  .frm label {
+    font-weight: bold;
+  }
+  
+  .frm input[type='text'],
+  .frm input[type='email'],
+  .frm input[type='tel'] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+  }
+  
+  .frm input[type='text']:focus,
+  .frm input[type='email']:focus,
+  .frm input[type='tel']:focus,
+  .frm input[type='text']:hover, /* Added hover state */
+  .frm input[type='email']:hover,
+  .frm input[type='tel']:hover {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Added box shadow on hover */
+  }
+  
+  .bt {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bt:hover {
+    background-color: #0056b3;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .adddoctorpage {
+      padding: 10px;
+    }
+  }
+
+  .error{
+    color : red
+    
+  }

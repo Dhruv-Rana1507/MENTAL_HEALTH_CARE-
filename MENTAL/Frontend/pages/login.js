@@ -9,6 +9,8 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [enteredCaptcha, setEnteredCaptcha] = useState('');
   const [generatedCaptcha, setGeneratedCaptcha] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const router = useRouter();
 
   useEffect(() => {
@@ -21,8 +23,33 @@ const Login = () => {
     return Math.floor(100000 + Math.random() * 900000).toString();
   }
 
+  const validateEmail = () => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.match(regex)) {
+      setEmailError('Invalid email address');
+      return false;
+    }
+    setEmailError('');
+    return true;
+  };
+
+  const validatePassword = () => {
+    if (password.length <  8 || password.length > 12) {
+      setPasswordError('Password must be between 8 and 12 characters');
+
+      return false;
+    }
+    setPasswordError('');
+    return true;
+  };
+
   const handleSignup = async () => {
     try {
+      // Validate email and password
+      if (!validateEmail() || !validatePassword()) {
+        return;
+      }
+
       // Check if the entered captcha is correct
       if (enteredCaptcha !== generatedCaptcha) {
         // Display an alert for incorrect captcha
@@ -65,10 +92,10 @@ const Login = () => {
 
   return (
     <>
-      {/* navbar */}
+      
       <Nav />
       <div className={styles.container}>
-        <h1 className={styles.hd}>Sign Up</h1>
+        <h1 className={styles.hd}>Log In</h1>
         <form className={styles['signup-form']}>
           <label className={styles['signup-label']}>
             Email:
@@ -76,9 +103,11 @@ const Login = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              onBlur={validateEmail}
               className={styles['signup-input']}
               required
             />
+            {emailError && <span className={styles.error}>{emailError}</span>}
           </label>
           <label className={styles['signup-label']}>
             Password:
@@ -86,9 +115,11 @@ const Login = () => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              onBlur={validatePassword}
               className={styles['signup-input']}
               required
             />
+            {passwordError && <span className={styles.error}>{passwordError}</span>}
           </label>
           <label className={styles['signup-label']}>
             Captcha:

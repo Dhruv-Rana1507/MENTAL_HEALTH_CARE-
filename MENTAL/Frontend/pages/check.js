@@ -1,8 +1,7 @@
-
 import React, { useState } from 'react';
 import axios from 'axios';
-import styles from '../styles/check.module.css';  
-import Usernav from'../component/usernav';
+import styles from '../styles/check.module.css';
+import Usernav from '../component/usernav';
 
 const CheckYourselfPage = () => {
   const [username, setUsername] = useState('');
@@ -14,46 +13,35 @@ const CheckYourselfPage = () => {
   const [suggestedDoctors, setSuggestedDoctors] = useState([]);
 
   const diseases = [
-        { name: 'Depression', symptoms: ['Sadness', 'Fatigue', 'Changes in sleep'] },
-        { name: 'Anxiety', symptoms: ['Excessive worrying', 'Restlessness', 'Difficulty concentrating'] },
-        { name: 'Stress', symptoms: ['Headaches', 'Muscle tension', 'Irritability'] },
-        { name: 'Bipolar disorder', symptoms: ['Extreme mood swings', 'Energy changes', 'Sleep disturbances'] },
-        { name: 'Schizophrenia', symptoms: ['Delusions', 'Hallucinations', 'Disorganized thinking'] },
-        { name: 'Eating disorders', symptoms: ['Preoccupation with food, weight, and body shape', 'Binge eating', 'Purging behaviors'] },
-        { name: 'Obsessive-Compulsive Disorder (OCD)', symptoms: ['Obsessions', 'Compulsions', 'Fear of contamination'] },
-        { name: 'Post-Traumatic Stress Disorder (PTSD)', symptoms: ['Flashbacks', 'Nightmares', 'Avoidance'] },
-        // { name: 'Panic Disorder', symptoms: ['Sudden and repeated panic attacks', 'Feeling of impending doom', 'Rapid heart rate'] },
-        // { name: 'Social Anxiety Disorder', symptoms: ['Fear of social situations', 'Avoidance of social activities', 'Physical symptoms of anxiety'] },
-        // { name: 'Generalized Anxiety Disorder (GAD)', symptoms: ['Excessive worry', 'Difficulty concentrating'] },
-        // { name: 'Attention-Deficit/Hyperactivity Disorder (ADHD)', symptoms: ['Inattention', 'Hyperactivity', 'Impulsivity'] },
-        // { name: 'Autism Spectrum Disorder (ASD)', symptoms: ['Social challenges', 'Repetitive behaviors', 'Communication difficulties'] },
-        // { name: 'Alzheimer\'s Disease', symptoms: ['Memory loss', 'Confusion', 'Difficulty completing familiar tasks'] },
-        // { name: 'Parkinson\'s Disease', symptoms: ['Tremors', 'Bradykinesia', 'Postural instability'] },
-        { name: 'Multiple Personality Disorder (Dissociative Identity Disorder)', symptoms: ['Presence of two or more distinct identity states', 'Amnesia', 'Identity disturbance'] },
-        { name: 'Histrionic Personality Disorder', symptoms: ['Attention-seeking behavior', 'Excessive emotions', 'Need for reassurance'] },
-        { name: 'Agoraphobia', symptoms: ['Fear of places or situations that might cause panic', 'Avoidance of certain situations', 'Dependency on others'] },
-      ];
+    { name: 'Depression', symptoms: ['Sadness', 'Fatigue', 'Changes in sleep'] },
+    { name: 'Anxiety', symptoms: ['Excessive worrying', 'Restlessness', 'Difficulty concentrating'] },
+    { name: 'Stress', symptoms: ['Headaches', 'Muscle tension', 'Irritability'] },
+    { name: 'Bipolar disorder', symptoms: ['Extreme mood swings', 'Energy changes', 'Sleep disturbances'] },
+    { name: 'Schizophrenia', symptoms: ['Delusions', 'Hallucinations', 'Disorganized thinking'] },
+    { name: 'Eating disorders', symptoms: ['Preoccupation with food, weight, and body shape', 'Binge eating', 'Purging behaviors'] },
+    { name: 'Obsessive-Compulsive Disorder (OCD)', symptoms: ['Obsessions', 'Compulsions', 'Fear of contamination'] },
+    { name: 'Post-Traumatic Stress Disorder (PTSD)', symptoms: ['Flashbacks', 'Nightmares', 'Avoidance'] },
+    { name: 'Multiple Personality Disorder (Dissociative Identity Disorder)', symptoms: ['Presence of two or more distinct identity states', 'Amnesia', 'Identity disturbance'] },
+    { name: 'Histrionic Personality Disorder', symptoms: ['Attention-seeking behavior', 'Excessive emotions', 'Need for reassurance'] },
+    { name: 'Agoraphobia', symptoms: ['Fear of places or situations that might cause panic', 'Avoidance of certain situations', 'Dependency on others'] },
+  ];
 
   const handleCheckboxChange = (symptom) => {
     const updatedSymptoms = [...selectedSymptoms];
-
     if (updatedSymptoms.includes(symptom)) {
       updatedSymptoms.splice(updatedSymptoms.indexOf(symptom), 1);
     } else {
       updatedSymptoms.push(symptom);
     }
-
     setSelectedSymptoms(updatedSymptoms);
   };
 
   const handleSubmit = async () => {
-    // Check if age is between 18 and 40
     if (parseInt(age, 10) < 18 || parseInt(age, 10) > 40) {
       setResult('Invalid age. Please make sure you are between 18 and 40.');
       return;
     }
 
-    // Find diseases based on selected symptoms
     const matchingDiseases = diseases.filter((disease) =>
       disease.symptoms.some((symptom) => selectedSymptoms.includes(symptom))
     );
@@ -63,12 +51,11 @@ const CheckYourselfPage = () => {
         .map((disease) => disease.name)
         .join(', ')}`;
       setResult(resultString);
-      
+
       try {
         const response = await axios.post('http://localhost:8001/suggest-doctors', {
           diseases: matchingDiseases.map((disease) => disease.name),
         });
-
         setSuggestedDoctors(response.data.suggestedDoctors);
       } catch (error) {
         console.error('Error suggesting doctors:', error.message);
@@ -97,10 +84,10 @@ const CheckYourselfPage = () => {
       setResult('Error submitting data. Please try again.');
     }
   };
-  
+
   return (
     <>
-      <Usernav/>
+      <Usernav />
       <div className={styles['check-yourself-container']}>
         <h1>Check Yourself</h1>
         <table className={styles['form-table']}>
@@ -147,22 +134,25 @@ const CheckYourselfPage = () => {
         </button>
         <br />
         <div className={styles['result-container']}>
-  <h3>Disease: {result}</h3>
-  
-</div>
-                <div className={styles['doc']}>
-                <h3>Suggested Doctors:</h3>
-                  <ul className={styles['dct']}>
-                    {Array.isArray(suggestedDoctors) ? (
-                      suggestedDoctors.map((doctor, index) => (
-                        <li key={index}>{doctor.dname}</li>
-                      ))
-                    ) : (
-                      <li>No suggested doctors found</li>
-                    )}
-                  </ul>
-                </div>
-
+          <h3>Disease: {result}</h3>
+        </div>
+        <div className={styles['doc']}>
+          <h3>Suggested Doctors:</h3>
+          <ul className={styles['dct']}>
+            {Array.isArray(suggestedDoctors) ? (
+              suggestedDoctors.map((doctor, index) => (
+                <li key={index}>
+                  <div>Name: {doctor.dname}</div>
+                  <div>Email: {doctor.email}</div>
+                  <div>Phone: {doctor.phone}</div>
+                  <div>Speciality: {doctor.speciality}</div>
+                </li>
+              ))
+            ) : (
+              <li>No suggested doctors found</li>
+            )}
+          </ul>
+        </div>
       </div>
     </>
   );

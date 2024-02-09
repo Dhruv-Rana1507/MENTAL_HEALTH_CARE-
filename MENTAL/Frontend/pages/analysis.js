@@ -9,7 +9,7 @@ const Analysis = () => {
       <Nav />
       <div className={styles['container']}>
         <div className={styles['nv']} id='top'>
-          <h2>Mental Health Care Analysis Done In Year Are  </h2>
+          <h2> Mental Health Care Analysis  </h2>
           <div className={styles['yearmenu']}>
             <ul>
               <li> <a href="#y2014">2014</a> </li>
