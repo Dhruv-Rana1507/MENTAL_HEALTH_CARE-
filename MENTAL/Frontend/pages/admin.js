@@ -71,6 +71,8 @@ const Admin = () => {
                 <th>Speciality</th>
                 <th>State</th>
                 <th>City</th>
+                <th>Email</th>
+                <th>Phone</th>
               </tr>
             </thead>
             <tbody className={styles.body}>
@@ -80,6 +82,8 @@ const Admin = () => {
                   <td>{doctor.speciality}</td>
                   <td>{doctor.state}</td>
                   <td>{doctor.city}</td>
+                  <td>{doctor.email}</td>
+                  <td>{doctor.phone}</td>
                 </tr>
               ))}
             </tbody>

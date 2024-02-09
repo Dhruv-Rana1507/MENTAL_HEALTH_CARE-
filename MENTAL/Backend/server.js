@@ -111,24 +111,25 @@ app.post('/chk', (req, res) => {
 });
 
 
-  // Insert doctor data into the database
-  app.post('/api/add_doctor', (req, res) => {
-    const { name, speciality, state, city } = req.body;
+ // Insert doctor data into the database
+ app.post('/api/add_doctor', (req, res) => {
+  const { name, speciality, state, city, email, phone } = req.body;
 
-    connection.query(
-      'INSERT INTO doctor (dname, speciality, state, city) VALUES (?, ?, ?, ?)',
-      [name, speciality, state, city],
-      (err, results) => {
-        if (err) {
-          console.error('Error inserting doctor data:', err.message);
-          res.json({ success: false, message: 'Error inserting doctor data' });
-        } else {
-          const insertedId = results.insertId; // Get the auto-generated iddoctor
-          res.json({ success: true, message: 'Doctor added successfully', iddoctor: insertedId });
-        }
+  // Insert doctor data into the database
+  connection.query(
+    'INSERT INTO doctor (dname, speciality, state, city, email, phone) VALUES (?, ?, ?, ?, ?, ?)',
+    [name, speciality, state, city, email, phone],
+    (err, results) => {
+      if (err) {
+        console.error('Error inserting doctor data:', err.message);
+        res.json({ success: false, message: 'Error inserting doctor data' });
+      } else {
+        const insertedId = results.insertId;
+        res.json({ success: true, message: 'Doctor added successfully', iddoctor: insertedId });
       }
-    );
-  });
+    }
+  );
+});
 
 // Fetch doctor information from the database
 app.get('/api/get_doctors', (req, res) => {
@@ -149,17 +150,18 @@ app.post('/suggest-doctors', (req, res) => {
   const { diseases } = req.body;
 
   // Query the database to find doctors who specialize in treating the provided diseases
-  const query = 'SELECT dname FROM doctor WHERE speciality IN (?)';
+  const query = 'SELECT dname, speciality,email, phone FROM doctor WHERE speciality IN (?)';
   connection.query(query, [diseases], (err, results) => {
     if (err) {
       console.error('Error suggesting doctors:', err);
       return res.status(500).json({ success: false, message: 'Error suggesting doctors' });
     }
 
-    // Return the list of suggested doctors
+    // Return the list of suggested doctors with their email and phone number
     return res.status(200).json({ success: true, suggestedDoctors: results });
   });
 });
+
 
 
 
@@ -167,3 +169,5 @@ app.post('/suggest-doctors', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+

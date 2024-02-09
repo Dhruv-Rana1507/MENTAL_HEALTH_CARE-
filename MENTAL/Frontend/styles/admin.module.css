@@ -12,9 +12,8 @@
   }
   
   .adinfo {
-    border: 2px solid red;
-    
-    margin-bottom: 20px;
+    /* border: 2px solid red; */
+    margin-bottom: 25px;
   }
   
   .qt,
