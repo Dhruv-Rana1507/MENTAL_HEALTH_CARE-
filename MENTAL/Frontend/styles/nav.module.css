@@ -1,14 +1,9 @@
-/* Gradient Background for Body */
-/* .body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(180deg, #43ddf1, #ffffff);
-} */
+
 
 /* =====header css==== */
 .akhuheader {
   /* border: 2px solid red; */
-  padding: 15px;
+  /* padding: 15px; */
   text-align: center;
   font-family: 'Roboto', sans-serif;  
   display: flex;
@@ -20,24 +15,52 @@
 }
 
 /* =====logo css==== */
+/* =====logo css==== */
 .logo {
-
   flex: 30%;
   display: flex;
   align-items: center;
-  justify-content:left;  
-  /* border: 2px solid rgb(0, 0, 0); */
+  justify-content: left;
 }
-.lg{
-  /* display: flex;  */
-  font-size: larger;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-  margin: 50px;
-  transition: all 0.3s ease-in-out;
 
+.lg {
+  font-size: 24px; /* Adjust font size */
+  font-weight: bold; /* Add font weight for emphasis */
+  text-transform: uppercase; /* Convert text to uppercase */
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Change text color */
+  transition: all 0.3s ease-in-out;
 }
+
+.lg:hover {
+  /* color: #47ffdd;   */
+  transform: scale(1.1); /* Add a slight scale effect on hover */
+}
+
+/* Add a subtle shadow effect to the logo */
+.logo:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Add a background color or gradient */
+.lg {
+  background: linear-gradient(135deg, #000000, #00ffcc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Optional: Add a border radius to create a pill shape */
+.lg {
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+/* Optional: Adjust spacing */
+.logo {
+  margin-left: 20px; /* Add some space between the logo and other elements */
+}
+
 
 /* =======navbar css======= */
 .mainnav ul {
@@ -51,10 +74,11 @@
 }
 
 /* .mainnav {
-    border: 2px solid rgb(66, 66, 12);
 } */
 
 .mainnav ul {
+  
+  /* border: 2px solid rgb(66, 66, 12); */
   padding: 0;
   margin: 0;
 }
