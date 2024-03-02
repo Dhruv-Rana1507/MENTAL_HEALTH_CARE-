@@ -2,19 +2,17 @@
 
 /* =====header css==== */
 .akhuheader {
-  /* border: 2px solid red; */
-  /* padding: 15px; */
+  
   text-align: center;
   font-family: 'Roboto', sans-serif;  
   display: flex;
   padding: 0;
   margin: 0;
   transition: background 0.5s ease-in-out;
-  backdrop-filter: blur(6px); /* Add backdrop filter for blur effect */
-  background-color:transparent; /* Add a semi-transparent background color for better visibility */
+  backdrop-filter: blur(6px); 
+  background-color:transparent; 
 }
 
-/* =====logo css==== */
 /* =====logo css==== */
 .logo {
   flex: 30%;
@@ -23,38 +21,32 @@
   justify-content: left;
 }
 
+
+
 .lg {
-  font-size: 24px; /* Adjust font size */
-  font-weight: bold; /* Add font weight for emphasis */
-  text-transform: uppercase; /* Convert text to uppercase */
-  text-decoration: none; /* Remove underline */
-  color: #333; /* Change text color */
-  transition: all 0.3s ease-in-out;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000c4;
+  transition: all 0.5s ease-in-out;
+  padding: 10px 20px; 
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+ 
 }
 
 .lg:hover {
-  /* color: #47ffdd;   */
-  transform: scale(1.1); /* Add a slight scale effect on hover */
+  color: #000000f3; /* Change text color on hover */
+  border: 2px solid rgba(134, 47, 47, 0.663); 
+  transform: scale(1.1); /* Add scale effect on hover */
+  border-color: black; /* Change border color on hover */
+  border-radius: 10px 0px 10px 0px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow effect on hover */
 }
 
-/* Add a subtle shadow effect to the logo */
-.logo:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
-/* Optional: Add a background color or gradient */
-.lg {
-  background: linear-gradient(135deg, #000000, #00ffcc);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
 
-/* Optional: Add a border radius to create a pill shape */
-.lg {
-  border-radius: 20px;
-  padding: 10px 20px;
-}
 
 /* Optional: Adjust spacing */
 .logo {
@@ -73,8 +65,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-/* .mainnav {
-} */
+
 
 .mainnav ul {
   
@@ -89,6 +80,17 @@
   display: flex;
   flex-wrap: wrap;
   transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bolder;
+  /* font-style: oblique; */
+  font-family:Verdana, Geneva, Tahoma, sans-serif;  
+}
+
+.mainnav ul li:hover{
+
+  color: #000000f3; /* Change text color on hover */
+  transform: scale(1.1); /* Add scale effect on hover */
+  text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); /* Add shadow effect on hover */
 }
 
 .strong {

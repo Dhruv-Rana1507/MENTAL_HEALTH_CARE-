@@ -1,0 +1,89 @@
+/* abt.module.css */
+
+.container {
+    max-width: 900px; /* Adjust max-width to your preference */
+    margin: 0 auto;
+    padding: 20px;
+    backdrop-filter: blur(6px); 
+    background-color:transparent; 
+  }
+  
+  .container h1 {
+    color: #333;
+    font-size: 2rem; /* Increase font size for headings */
+    margin-bottom: 20px; /* Add space below headings */
+  }
+  
+  .container p {
+    line-height: 1.6;
+  }
+  
+  .container h2 {
+    margin-top: 30px; /* Increase margin-top for section headings */
+    color: #333;
+    font-size: 1.5rem; /* Increase font size for section headings */
+  }
+  
+  .teammember {
+    margin-top: 30px; /* Increase margin-top for team members */
+    display: flex;
+    align-items: center;
+    /* border: 2px solid red; */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .teammember p {
+    font-size: 1.1rem; /* Increase font size for team member details */
+  }
+  
+  .teammember p strong {
+    font-size: 1.2rem; /* Increase font size for team member names */
+    color: #000000; /* Change color for team member names */
+  }
+ 
+  .teammember h2{
+    margin: 0px  auto;
+    /* border: 2px solid red ; */
+  }
+
+.img {
+    width: 100px; /* Adjust width of the image */
+    height: 100px; /* Adjust height of the image */
+    border-radius: 50%; /* Make the image round */
+    margin-right: 20px; /* Add space to the right of the image */
+  }
+  
+  /* Responsive Styles */
+  
+  @media only screen and (max-width: 768px) {
+    .teammember img {
+      margin: 0 auto 10px; /* Center-align image and add space below it on smaller screens */
+    }
+  }
+  
+  /* Responsive Styles */
+  
+  @media only screen and (max-width: 768px) {
+    .container {
+      padding: 15px; /* Adjust padding for smaller screens */
+    }
+  
+    .container h1 {
+      font-size: 1.8rem; /* Decrease font size for headings on smaller screens */
+    }
+  
+    .container  h2 {
+      font-size: 1.3rem; /* Decrease font size for section headings on smaller screens */
+    }
+  
+    .teammember {
+      flex-direction: column; /* Stack team members vertically on smaller screens */
+      text-align: center; /* Center-align team member details */
+    }
+  
+    .teammember p {
+      margin-top: 10px; /* Add space between team member details on smaller screens */
+    }
+  }
+  

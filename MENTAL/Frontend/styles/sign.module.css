@@ -13,7 +13,6 @@
   height: auto;
   padding: 20px;
   background-color: transparent;
-  /* background-color: #f0f0f0; */
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
@@ -32,6 +31,7 @@
   margin-bottom: 20px;
   color: #333;
   font-size: 24px;
+  font-family: '`', sans-serif; 
 }
 
 .form {
@@ -55,7 +55,7 @@
   font-size: larger;
   margin: 8px;
   display: block;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
   color: #000000;
 }
 
@@ -69,7 +69,7 @@
 .pincode input,
 .phn input {
   font-size: medium;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
   margin: 8px;
   display: flex;
   border: 1px solid #aaa;
@@ -90,7 +90,8 @@
 .city input:hover,
 .pincode input:hover,
 .phn input:hover {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Enhanced 3D effect on hover */
+  box-shadow: 2px 2px 7px 0px;
+  transition: all 0.2s ease-in-out;
 }
 
 .form-control {
