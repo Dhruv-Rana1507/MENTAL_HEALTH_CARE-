@@ -5,7 +5,7 @@ const Nav = () => {
   return (
     <div className={styles.akhuheader}>
 <div className={styles.logo}>
-<strong><Link href='/'>Inner Ease</Link></strong>  
+<Link href='/' className={styles.lg} >Inner<strong>Ease</strong></Link> 
 </div>        
     <nav className={styles.mainnav}>
     <ul>
